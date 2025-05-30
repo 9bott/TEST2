@@ -1,0 +1,885 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-family-primary: 'Cairo', 'Noto Sans Arabic', system-ui, sans-serif;
+  --font-family-secondary: 'Amiri', serif;
+  --font-family-mono: 'Fira Code', monospace;
+}
+
+/* Dark mode styles */
+.dark {
+  --bg-primary: #000c24;
+  --bg-secondary: #001635;
+  --bg-tertiary: #002147;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-primary: rgba(59, 130, 246, 0.2);
+  --border-secondary: rgba(148, 163, 184, 0.1);
+}
+
+/* Light mode styles */
+:root {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-primary: rgba(59, 130, 246, 0.1);
+  --border-secondary: rgba(148, 163, 184, 0.05);
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-family-primary);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* RTL support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="ltr"] {
+  text-align: left;
+}
+
+/* Transitions */
+.transition-theme {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--border-primary);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--border-primary);
+  color: var(--text-primary);
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+/* Utility classes */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Navy theme specific styles */
+.bg-gradient-navy {
+  background: linear-gradient(135deg, #000614 0%, #000c24 50%, #002147 100%);
+}
+
+.dark .bg-gradient-navy {
+  background: linear-gradient(135deg, #000614 0%, #000c24 50%, #002147 100%);
+}
+
+/* Button styles */
+.btn-navy {
+  background-color: #000c24;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-navy:hover {
+  background-color: #001635;
+}
+
+.dark .btn-navy {
+  background-color: #001635;
+}
+
+.dark .btn-navy:hover {
+  background-color: #002147;
+}
+
+/* Card styles */
+.card-navy {
+  background-color: rgba(0, 12, 36, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.dark .card-navy {
+  background-color: rgba(0, 22, 53, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Text styles */
+.text-navy {
+  color: #000c24;
+}
+
+.dark .text-navy {
+  color: #f8fafc;
+}
+
+/* Border styles */
+.border-navy {
+  border-color: rgba(0, 12, 36, 0.2);
+}
+
+.dark .border-navy {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ملف الثيم الموحد - متغيرات CSS وأنماط موحدة محدثة */
+
+/* استيراد الخطوط العربية المحدثة */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+/* متغيرات الثيم الموحد - الوضع المظلم الأزرق */
+:root {
+  /* الألوان الأساسية - Blue Dark Theme */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  
+  /* الألوان الثانوية - Cyan for secondary */
+  --color-secondary-50: #ecfeff;
+  --color-secondary-100: #cffafe;
+  --color-secondary-200: #a5f3fc;
+  --color-secondary-300: #67e8f9;
+  --color-secondary-400: #22d3ee;
+  --color-secondary-500: #06b6d4;
+  --color-secondary-600: #0891b2;
+  --color-secondary-700: #0e7490;
+  --color-secondary-800: #155e75;
+  --color-secondary-900: #164e63;
+  
+  /* ألوان النظام للوضع المظلم */
+  --color-success-400: #34d399;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-danger-400: #f87171;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  
+  /* متغيرات إضافية - Dark Mode */
+  --foreground-rgb: 248, 250, 252;
+  --background-start-rgb: 2, 6, 23;
+  --background-end-rgb: 15, 23, 42;
+  
+  /* متغيرات الرسوم المتحركة */
+  --animation-duration: 0.3s;
+  --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* متغيرات خاصة بالموبايل */
+  --mobile-padding: 1rem;
+  --desktop-padding: 2rem;
+  
+  /* متغيرات الألوان الداكنة */
+  --dark-bg: #020617;
+  --dark-surface: #0f172a;
+  --dark-border: #1e293b;
+  
+    /* خلفيات الوضع المظلم الكحلي */  --bg-primary: #000c24;  --bg-secondary: #001635;  --bg-tertiary: #002147;  --bg-card: #001428;  --bg-surface: #002c5a;
+  
+  /* نصوص الوضع المظلم */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-accent: #60a5fa;
+  
+    /* التدرجات المظلمة الكحلية */  --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);  --gradient-secondary: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);  --gradient-hero: linear-gradient(135deg, #000614 0%, #000c24 30%, #001635 100%);  --gradient-dark: linear-gradient(135deg, #000614 0%, #000c24 50%, #001635 100%);  --gradient-blue: linear-gradient(135deg, #000080 0%, #001f3f 50%, #003366 100%);  --gradient-glassmorphism: linear-gradient(145deg, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0.05) 100%);
+  --gradient-success: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+  --gradient-danger: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+  --gradient-light: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%);
+  
+  /* الظلال المظلمة الزرقاء */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3), 0 2px 10px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.4);
+  --shadow-glow-primary: 0 0 30px rgba(59, 130, 246, 0.5);
+  --shadow-glow-secondary: 0 0 30px rgba(6, 182, 212, 0.5);
+  --shadow-floating: 0 8px 30px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  --shadow-blue: 0 0 25px rgba(59, 130, 246, 0.3);
+  
+  /* حدود مظلمة */
+  --border-primary: rgba(59, 130, 246, 0.2);
+  --border-secondary: rgba(148, 163, 184, 0.1);
+  --border-muted: rgba(148, 163, 184, 0.05);
+  
+  /* الخطوط الموحدة */
+  --font-family-primary: 'Cairo', 'Noto Sans Arabic', system-ui, sans-serif;
+  --font-family-secondary: 'Amiri', serif;
+  --font-family-mono: 'Fira Code', monospace;
+  
+  /* أحجام الخطوط */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  
+  /* الحدود الدائرية */
+  --border-radius-sm: 0.125rem;
+  --border-radius-md: 0.375rem;
+  --border-radius-lg: 0.5rem;
+  --border-radius-xl: 0.75rem;
+  --border-radius-2xl: 1rem;
+  --border-radius-3xl: 1.5rem;
+  --border-radius-4xl: 2rem;
+  --border-radius-full: 9999px;
+  
+  /* الانتقالات */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-bouncy: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* المسافات */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+}
+
+/* إعدادات عامة للثيم المظلم */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--gradient-hero);
+  direction: rtl;
+  min-height: 100vh;
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* تحسين التمرير على الموبايل */
+@media (max-width: 768px) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* تحسين الإضاءة على الشاشات عالية الكثافة */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+/* أنماط الثيم المظلم الأزرق الموحد */
+
+/* 1. أنماط الأزرار المظلمة الزرقاء */
+.btn-theme-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3) var(--spacing-6);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  border-radius: var(--border-radius-xl);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-theme-dark:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.btn-theme-dark-primary {
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-theme-dark-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-primary);
+}
+
+.btn-theme-dark-secondary {
+  background: var(--gradient-secondary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-theme-dark-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-secondary);
+}
+
+.btn-theme-dark-outline {
+  background: transparent;
+  color: var(--color-primary-400);
+  border: 2px solid var(--color-primary-400);
+}
+
+.btn-theme-dark-outline:hover {
+  background: var(--color-primary-600);
+  color: var(--text-primary);
+}
+
+.btn-theme-dark-glass {
+  background: rgba(59, 130, 246, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-primary);
+  color: var(--text-primary);
+}
+
+.btn-theme-dark-glass:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+/* 2. أنماط البطاقات المظلمة */
+.card-theme-dark {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-normal);
+  overflow: hidden;
+}
+
+.card-theme-dark:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-floating);
+  border-color: var(--border-primary);
+}
+
+.card-theme-dark-glass {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-primary);
+  box-shadow: var(--shadow-card);
+}
+
+.card-theme-dark-elevated {
+  box-shadow: var(--shadow-xl);
+}
+
+.card-theme-dark-elevated:hover {
+  transform: translateY(-6px) rotateX(2deg);
+  box-shadow: var(--shadow-2xl);
+}
+
+/* 3. أنماط النصوص المتدرجة المظلمة */
+.text-theme-dark-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientTextShift 3s ease-in-out infinite;
+}
+
+.text-theme-dark-gradient-secondary {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientTextShift 3s ease-in-out infinite;
+}
+
+/* 4. أنماط الشارات المظلمة */
+.badge-theme-dark {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.badge-theme-dark-primary {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--color-primary-400);
+  border: 1px solid var(--border-primary);
+}
+
+.badge-theme-dark-secondary {
+  background: rgba(6, 182, 212, 0.2);
+  color: var(--color-secondary-400);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.badge-theme-dark-success {
+  background: rgba(52, 211, 153, 0.2);
+  color: var(--color-success-400);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.badge-theme-dark-warning {
+  background: rgba(251, 191, 36, 0.2);
+  color: var(--color-warning-400);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.badge-theme-dark-danger {
+  background: rgba(248, 113, 113, 0.2);
+  color: var(--color-danger-400);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+/* 5. أنماط حقول الإدخال المظلمة */
+.input-theme-dark {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--border-radius-xl);
+  color: var(--text-primary);
+  font-family: var(--font-family-primary);
+  transition: var(--transition-normal);
+}
+
+.input-theme-dark::placeholder {
+  color: var(--text-muted);
+}
+
+.input-theme-dark:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.input-theme-dark-glass {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-primary);
+}
+
+/* 6. أنماط التأثيرات التفاعلية المظلمة */
+.hover-theme-dark-lift {
+  transition: var(--transition-normal);
+}
+
+.hover-theme-dark-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-floating);
+}
+
+.hover-theme-dark-scale {
+  transition: var(--transition-normal);
+}
+
+.hover-theme-dark-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-theme-dark-glow {
+  transition: var(--transition-normal);
+}
+
+.hover-theme-dark-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+.hover-theme-dark-blue-glow {
+  transition: var(--transition-normal);
+}
+
+.hover-theme-dark-blue-glow:hover {
+  box-shadow: var(--shadow-blue);
+  border-color: var(--color-primary-400);
+}
+
+/* 7. أنماط الرسوم المتحركة المحدثة */
+@keyframes gradientTextShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes fadeInUpDark {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeftDark {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRightDark {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleInDark {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatDark {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulseDark {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+}
+
+@keyframes bounceDark {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bluePulseDark {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.7), 0 0 40px rgba(59, 130, 246, 0.4);
+  }
+}
+
+/* فئات الرسوم المتحركة للوضع المظلم */
+.animate-theme-dark-fadeInUp {
+  animation: fadeInUpDark 0.6s ease-out;
+}
+
+.animate-theme-dark-fadeInLeft {
+  animation: fadeInLeftDark 0.6s ease-out;
+}
+
+.animate-theme-dark-fadeInRight {
+  animation: fadeInRightDark 0.6s ease-out;
+}
+
+.animate-theme-dark-scaleIn {
+  animation: scaleInDark 0.6s ease-out;
+}
+
+.animate-theme-dark-float {
+  animation: floatDark 3s ease-in-out infinite;
+}
+
+.animate-theme-dark-pulse {
+  animation: pulseDark 2s ease-in-out infinite;
+}
+
+.animate-theme-dark-bounce {
+  animation: bounceDark 2s ease-in-out infinite;
+}
+
+.animate-theme-dark-blue-pulse {
+  animation: bluePulseDark 2s ease-in-out infinite;
+}
+
+/* 8. أنماط شبكة موحدة متجاوبة للوضع المظلم */
+.grid-theme-dark {
+  display: grid;
+  gap: var(--spacing-6);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-theme-dark-cards {
+  display: grid;
+  gap: var(--spacing-6);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* 9. أنماط الخلفيات المظلمة */
+.bg-theme-dark-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-theme-dark-secondary {
+  background: var(--gradient-secondary);
+}
+
+.bg-theme-dark-hero {
+  background: var(--gradient-hero);
+}
+
+.bg-theme-dark-card {
+  background: var(--bg-card);
+}
+
+.bg-theme-dark-glass {
+  background: rgba(59, 130, 246, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-primary);
+}
+
+.bg-theme-dark-surface {
+  background: var(--bg-surface);
+}
+
+/* 10. تحسينات للوصولية في الوضع المظلم */
+@media (prefers-reduced-motion: reduce) {
+  .animate-theme-dark-fadeInUp,
+  .animate-theme-dark-fadeInLeft,
+  .animate-theme-dark-fadeInRight,
+  .animate-theme-dark-scaleIn,
+  .animate-theme-dark-float,
+  .animate-theme-dark-pulse,
+  .animate-theme-dark-bounce,
+  .animate-theme-dark-blue-pulse,
+  .text-theme-dark-gradient,
+  .text-theme-dark-gradient-secondary {
+    animation: none;
+  }
+  
+  .hover-theme-dark-lift,
+  .hover-theme-dark-scale,
+  .hover-theme-dark-glow,
+  .hover-theme-dark-blue-glow,
+  .card-theme-dark,
+  .card-theme-dark-elevated {
+    transition: none;
+  }
+}
+
+/* 11. تنسيق متجاوب للوضع المظلم */
+@media (max-width: 640px) {
+  .grid-theme-dark {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+  
+  .grid-theme-dark-cards {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+  
+  .btn-theme-dark {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* 12. تحديد النص المحسن للوضع المظلم */
+::selection {
+  background-color: rgba(59, 130, 246, 0.4);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background-color: rgba(59, 130, 246, 0.4);
+  color: var(--text-primary);
+}
+
+/* 13. شريط التمرير المخصص للوضع المظلم */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-600);
+  border-radius: var(--border-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-500);
+}
+
+/* 14. أنماط الحاويات للوضع المظلم */
+.container-theme-dark {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+@media (min-width: 640px) {
+  .container-theme-dark {
+    padding: 0 var(--spacing-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-theme-dark {
+    padding: 0 var(--spacing-8);
+  }
+}
+
+/* 15. فئات إضافية خاصة بالموضع المظلم الأزرق */
+
+/* نصوص ملونة */
+.text-blue-light {
+  color: var(--color-primary-400);
+}
+
+.text-blue-medium {
+  color: var(--color-primary-500);
+}
+
+.text-blue-dark {
+  color: var(--color-primary-600);
+}
+
+.text-cyan-light {
+  color: var(--color-secondary-400);
+}
+
+.text-success-light {
+  color: var(--color-success-400);
+}
+
+.text-danger-light {
+  color: var(--color-danger-400);
+}
+
+/* خلفيات ملونة شفافة */
+.bg-blue-alpha {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.bg-cyan-alpha {
+  background: rgba(6, 182, 212, 0.1);
+}
+
+.bg-success-alpha {
+  background: rgba(52, 211, 153, 0.1);
+}
+
+.bg-danger-alpha {
+  background: rgba(248, 113, 113, 0.1);
+}
+
+/* حدود ملونة */
+.border-blue-alpha {
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.border-cyan-alpha {
+  border-color: rgba(6, 182, 212, 0.2);
+}
+
+/* ظلال ملونة */
+.shadow-blue-glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.shadow-cyan-glow {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+} 
